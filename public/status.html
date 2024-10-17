@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Kontrol</title>
+  </head>
+  <body>
+    <h1>Tarama Durumu: <span id="status">Bilinmiyor</span></h1>
+
+    <script>
+      function checkStatus() {
+        fetch("/status")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("status").textContent = data.message;
+          })
+          .catch((error) => {
+            console.error("Status kontrolünde hata:", error);
+          });
+      }
+
+      // Her 5 saniyede bir status kontrolü
+      setInterval(checkStatus, 5000);
+
+      // Sayfa yüklendiğinde ilk kontrol
+      checkStatus();
+    </script>
+  </body>
+</html>

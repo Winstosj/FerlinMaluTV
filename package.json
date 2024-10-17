@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "http-proxy-agent": "^7.0.2",
+    "moment-timezone": "^0.5.34",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^10.4.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
